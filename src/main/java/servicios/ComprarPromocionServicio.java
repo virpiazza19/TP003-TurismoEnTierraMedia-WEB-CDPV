@@ -17,10 +17,9 @@ public class ComprarPromocionServicio {
 	ItinerarioDAO itinerarioDAO = DAOFactory.getItinerarioDAO();
 
 
-	public Map<String, String> comprar(Integer usuarioId, Integer promocionId) {
+	public Map<String, String> comprar(Usuario usuario, Integer promocionId) {
 		Map<String, String> errors = new HashMap<>();
 
-		Usuario usuario = usuarioDAO.find(usuarioId);
 		Promocion promocion = promocionDAO.find(promocionId);
 
 		if (!promocion.hayCupo()) {
@@ -34,6 +33,7 @@ public class ComprarPromocionServicio {
 		}
 
 		if (errors.isEmpty()) {
+			usuario.agregarProductosAlItinerario(promocion);
 			promocion.disminuirCupo();
 			promocionDAO.update(promocion);
 			usuarioDAO.update(usuario);
