@@ -23,7 +23,7 @@ public class Usuario {
 
 	private HashMap<String, String> errors;
 
-	public LinkedList<Producto> itinerario = new LinkedList<Producto>();
+	public ArrayList<Producto> itinerario = new ArrayList<Producto>();
 
 	public Usuario(int id, String nombre, int presupuesto, double tiempoDisponible, String atraccionPreferida,
 			String password, Boolean admin) {
@@ -188,7 +188,7 @@ public class Usuario {
 		return itinerario;
 	}
 
-	public void setItinerario(LinkedList<Producto> itinerario) {
+	public void setItinerario(ArrayList<Producto> itinerario) {
 		this.itinerario = itinerario;
 	}
 

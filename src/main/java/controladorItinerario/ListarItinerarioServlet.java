@@ -29,8 +29,7 @@ public class ListarItinerarioServlet extends HttpServlet implements Servlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		Usuario usuario = (Usuario) req.getSession().getAttribute("usuario");
-		// List<Producto> productos = (List<Producto>)
-		// req.getSession().getAttribute("productos");
+
 		
 		List<Producto> itinerario = itinerarioServicio.find(usuario);
 		if (!itinerario.isEmpty()) {

@@ -56,7 +56,7 @@ public class ItinerarioDAO {
 			statement.setString(1, usuario.getNombre());
 			ResultSet resultados = statement.executeQuery();
 
-			List<Producto> itinerario = new ArrayList<>();
+			List<Producto> itinerario = new ArrayList<Producto>();
 			while (resultados.next()) {
 
 				if (!(resultados.getString(1) == null)) {
@@ -92,7 +92,7 @@ public class ItinerarioDAO {
 		return null;
 	}
 
-	public List<Producto> findByNombre(Usuario usuario) {
+	public List<Producto> findByNombre(int usuarioId) {
 		try {
 			String consulta = "select promocion_id, atraccion_id from Itinerario WHERE usuario_id = ?";
 			String promo = "select promocion.id, promocion.nombre from Promocion\r\n" + "INNER JOIN Itinerario on \r\n"
@@ -105,11 +105,11 @@ public class ItinerarioDAO {
 			PreparedStatement statementPromo = conn.prepareStatement(promo);
 			PreparedStatement statementAtrac = conn.prepareStatement(atracc);
 
-			statement.setInt(1, usuario.getId());
+			statement.setInt(1, usuarioId);
 			ResultSet resultados = statement.executeQuery();
 
-			List<Producto> productos = new ArrayList();
-			List<Producto> itinerario = new ArrayList<>();
+			List<Producto> productos = new ArrayList<Producto>();
+			List<Producto> itinerario = new ArrayList<Producto>();
 			while (resultados.next()) {
 
 				if (!(resultados.getString(1) == null)) {
