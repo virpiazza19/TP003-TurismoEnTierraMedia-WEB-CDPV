@@ -69,19 +69,9 @@ public class Atraccion extends Producto {
 		}
 	}
 
-	public Map<String, String> getErrors() {
-		return errors;
-	}
-
 	@Override
 	public void disminuirCupo() {
 		this.cupo--;
-	}
-
-	@Override
-	public String toString() {
-		return "Atracción: " + super.getNombre() + " | Costo: " + super.getCosto() + " monedas | Duración: "
-				+ super.getDuracion() + " hs. | Tipo de Atracción: " + super.getTipoAtraccion();
 	}
 
 	@Override
@@ -91,6 +81,16 @@ public class Atraccion extends Producto {
 		}
 
 		return this.equals(p);
+	}
+	
+	public Map<String, String> getErrors() {
+		return errors;
+	}
+	
+	@Override
+	public String toString() {
+		return "Atracción: " + super.getNombre() + " | Costo: " + super.getCosto() + " monedas | Duración: "
+				+ super.getDuracion() + " hs. | Tipo de Atracción: " + super.getTipoAtraccion();
 	}
 
 	@Override

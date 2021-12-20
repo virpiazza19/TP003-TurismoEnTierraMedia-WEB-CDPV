@@ -88,13 +88,4 @@ public abstract class Producto {
 
 	protected abstract void disminuirCupo();
 
-	public void actualizarProducto(Producto producto) {
-		if (producto.esPromo()) {
-			PromocionDAO promoDAO = DAOFactory.getPromocionDAO();
-			promoDAO.update((Promocion) producto);
-		} else {
-			AtraccionDAO atraccionDao = DAOFactory.getAtraccionDAO();
-			atraccionDao.update((Atraccion) producto);
-		}
-	}
 }

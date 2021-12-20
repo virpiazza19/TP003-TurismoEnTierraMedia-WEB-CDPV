@@ -56,11 +56,6 @@ public class Usuario {
 		return atraccionPreferida;
 	}
 
-	/*
-	 * public List<Producto> getProductosEnItinerario() { return
-	 * this.getItinerario().productos; }
-	 */
-
 	public void setId(int id) {
 		this.id = id;
 	}

@@ -1,14 +1,12 @@
-package modeloNullUsuario;
+package modelo;
 
-import modelo.Usuario;
-
-public class NullUser extends Usuario {
+public class UsuarioNulo extends Usuario {
 
 	public static Usuario build() {
-		return new NullUser();
+		return new UsuarioNulo();
 	}
 
-	public NullUser() {
+	public UsuarioNulo() {
 		super(0, "", 0, 0.0, "", "", false);
 	}
 
